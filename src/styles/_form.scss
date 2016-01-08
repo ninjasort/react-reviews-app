@@ -1,0 +1,373 @@
+.FormLabel {
+  display: block;
+  -webkit-transition: color 280ms;
+  -o-transition: color 280ms;
+  transition: color 280ms;
+  color: #777;
+  margin-bottom: 0.5em;
+}
+.FormField {
+  margin-bottom: 1em;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .FormRow {
+    margin: 0 -0.375em 1em;
+    min-width: 100%;
+  }
+  .FormRow > .FormField {
+    display: block;
+    float: left;
+    padding: 0 0.375em;
+  }
+  .FormRow > .FormField.one-half,
+  .FormRow > .FormField.two-quarters,
+  .FormRow > .FormField.three-sixths {
+    width: 50%;
+  }
+  .FormRow > .FormField.one-quarter {
+    width: 25%;
+  }
+  .FormRow > .FormField.three-quarters {
+    width: 75%;
+  }
+  .FormRow > .FormField.one-third,
+  .FormRow > .FormField.two-sixths {
+    width: 33.333%;
+  }
+  .FormRow > .FormField.two-thirds,
+  .FormRow > .FormField.four-sixths {
+    width: 66.666%;
+  }
+  .FormRow > .FormField.one-fifth {
+    width: 20%;
+  }
+  .FormRow > .FormField.two-fifths {
+    width: 40%;
+  }
+  .FormRow > .FormField.three-fifths {
+    width: 60%;
+  }
+  .FormRow > .FormField.four-fifths {
+    width: 80%;
+  }
+  .FormRow > .FormField.one-sixth {
+    width: 16.666%;
+  }
+  .FormRow > .FormField.five-sixths {
+    width: 83.333%;
+  }
+  .FormField .FormRow {
+    margin-bottom: 0;
+  }
+}
+.FileUpload {
+  overflow: hidden;
+}
+.FileUpload__image {
+  border-radius: 0.3em;
+  border: 1px solid #ccc;
+  float: left;
+  margin-right: 20px;
+  padding: 5px;
+  width: 120px;
+}
+.FileUpload__image-src {
+  height: auto;
+  max-width: 100%;
+}
+.FileUpload__message {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #666;
+  display: inline-block;
+  margin-bottom: 1em;
+}
+.form-validation {
+  animation: formValidationMessage 280ms ease;
+  font-size: 0.8rem;
+  margin-top: .5em;
+  overflow: hidden;
+}
+.is-invalid .form-validation {
+  color: #d64242;
+}
+.is-valid .form-validation {
+  color: #34c240;
+}
+@-webkit-keyframes formValidationMessage {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 14px;
+    opacity: 1;
+  }
+}
+@keyframes formValidationMessage {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 14px;
+    opacity: 1;
+  }
+}
+.FormField.is-invalid .FormLabel {
+  color: #d64242;
+}
+.FormField.is-invalid .FormInput {
+  border-color: #d64242;
+}
+.FormField.is-invalid .FormInput:focus {
+  border-color: #d64242;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 3px rgba(214, 66, 66, 0.1);
+}
+.FormField.is-valid .FormLabel {
+  color: #34c240;
+}
+.FormField.is-valid .FormInput {
+  border-color: #34c240;
+}
+.FormField.is-valid .FormInput:focus {
+  border-color: #34c240;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 3px rgba(52, 194, 64, 0.1);
+}
+.Checkbox,
+.Radio {
+  display: block;
+  margin-bottom: .5em;
+}
+.Checkbox__input {
+  position: relative;
+  top: -1px;
+}
+.Checkbox__label,
+.Radio__label {
+  margin-left: .5em;
+}
+.inline-controls > .Checkbox,
+.inline-controls > .Radio,
+.Checkbox--inline,
+.Radio--inline {
+  display: inline-block;
+  margin-right: 1em;
+}
+.Checkbox--disabled,
+.Radio--disabled {
+  color: #999;
+}
+@media (min-width: 768px) {
+  .Checkbox,
+  .Radio {
+    line-height: 2.4em;
+  }
+}
+.Form--horizontal .FormLabel {
+  display: block;
+}
+.Form--horizontal .FormLabel:not(:first-child) {
+  margin-top: 1em;
+}
+@media (min-width: 768px) {
+  .Form--horizontal .FormField {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+  }
+  .Form--horizontal .FormField.offset-absent-label {
+    padding-left: 180px;
+  }
+  .Form--horizontal .FormLabel {
+    display: table-cell;
+    line-height: 2.4em;
+    margin-bottom: 0;
+    vertical-align: top;
+    width: 180px;
+  }
+  .Form--horizontal .FormLabel:not(:first-child) {
+    padding-left: 20px;
+  }
+  .Form--horizontal .FormRow > .FormField {
+    display: block;
+    margin-bottom: 0;
+    min-width: 0;
+  }
+  .Form--horizontal .FormRow > .FormField > .FormLabel {
+    display: block;
+  }
+  .Form--horizontal .FormRow > .FormField .FormInput {
+    margin: 0;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .Form--inline .Checkbox,
+  .Form--inline .Radio,
+  .Form--inline .FormField {
+    display: inline-block;
+    padding-left: .25em;
+    padding-right: .25em;
+    vertical-align: top;
+  }
+  .Form--inline .Checkbox:first-child,
+  .Form--inline .Radio:first-child,
+  .Form--inline .FormField:first-child {
+    padding-left: 0;
+  }
+  .Form--inline .Checkbox:last-child,
+  .Form--inline .Radio:last-child,
+  .Form--inline .FormField:last-child {
+    padding-right: 0;
+  }
+  .Form--inline .Checkbox,
+  .Form--inline .Radio {
+    line-height: 2.4em;
+    margin: 0 0.75em;
+  }
+  .Form--inline .FormLabel {
+    position: absolute !important;
+    overflow: hidden !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+  }
+}
+.FormInput {
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  background-color: white;
+  background-image: none;
+  border-radius: 0.3em;
+  border: 1px solid #ccc;
+  border-top-color: #c2c2c2;
+  border-bottom-color: #d6d6d6;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  color: #333;
+  display: block;
+  line-height: 1.2;
+  height: 2.4em;
+  padding: 0 0.75em;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.FormInput:hover {
+  border-color: #b3b3b3;
+  outline: 0;
+}
+.FormInput.focus,
+.FormInput.is-focused,
+.FormInput:focus {
+  border-color: #1385e5;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 3px rgba(19, 133, 229, 0.1);
+  outline: 0;
+}
+.FormInput.disabled,
+.FormInput[disabled] {
+  background-color: #f7f7f7;
+  pointer-events: none;
+}
+.FormInput::-moz-focus-inner {
+  border: 0;
+  outline: 0;
+}
+.FormInput--lg {
+  font-size: 1.25rem;
+}
+.FormInput--sm {
+  font-size: 0.9rem;
+}
+.FormInput--xs {
+  font-size: 0.8rem;
+  line-height: 1.9;
+  padding-left: .66em;
+  padding-right: .66em;
+}
+/*div*/
+.FormInput-noedit {
+  max-width: 100%;
+  /* 1 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  /* 2 */
+  background-color: #f8f8f8;
+  border-radius: 0.3em;
+  border: 1px solid #e9e9e9;
+  color: #333;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 2.3em;
+  height: 2.4em;
+  min-width: 180px;
+  padding: 0 0.75em;
+  vertical-align: middle;
+  width: auto;
+}
+a.FormInput-noedit {
+  background-color: rgba(19, 133, 229, 0.05);
+  border-color: rgba(19, 133, 229, 0.1);
+  color: #1385e5;
+  margin-right: 5px;
+  min-width: 0;
+  text-decoration: none;
+}
+a.FormInput-noedit:hover,
+a.FormInput-noedit:focus {
+  background-color: rgba(19, 133, 229, 0.1);
+  border-color: rgba(19, 133, 229, 0.1);
+  color: #1385e5;
+  outline: none;
+  text-decoration: underline;
+}
+.FormInput-noedit--multiline {
+  line-height: 1.3;
+  height: auto;
+  padding: 0.5em 0.75em;
+  white-space: normal;
+}
+textarea.FormInput {
+  overflow: auto;
+  resize: vertical;
+  height: auto;
+  line-height: 1.4em;
+  min-height: 6.75em;
+  padding: 0.5em 0.75em;
+}
+.FormSelect {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+  border-bottom-color: #c2c2c2;
+  border-top-color: #d6d6d6;
+  height: 2.4em;
+}
+.FormSelect:focus {
+  box-shadow: 0 0 0 3px rgba(19, 133, 229, 0.1);
+}
+.FormSelect.disabled,
+.FormSelect[disabled] {
+  color: #999;
+}
+.FormSelect__arrows {
+  bottom: 0;
+  line-height: 2.4em;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  width: 2.4em;
+}
+.FormSelect__arrows > svg {
+  fill: #333;
+}
+.FormSelect__arrows--disabled > svg {
+  fill: #999;
+}

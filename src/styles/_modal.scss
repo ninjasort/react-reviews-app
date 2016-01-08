@@ -1,0 +1,137 @@
+.Modal {
+  transition: visibility 140ms;
+  bottom: 0;
+  left: 0;
+  outline: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  visibility: hidden;
+  z-index: 110;
+  -webkit-overflow-scrolling: touch;
+}
+.Modal.is-open {
+  transition: none;
+  transition: all 0.5s ease;
+  visibility: visible;
+}
+.Modal-dialog {
+  max-width: 100%;
+  padding: 10px;
+  position: relative;
+  width: auto;
+  z-index: 2;
+}
+.Modal-dialog-enter {
+  animation-name: modalDialogEnter;
+  animation-duration: 260ms;
+  animation-timing-function: cubic-bezier(0.5, -0.55, 0.4, 1.55);
+}
+.Modal-dialog-leave {
+  animation-duration: 140ms;
+  animation-name: modalDialogLeave;
+}
+.Modal-content {
+  position: relative;
+  background-color: white;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.175), 0 3px 8px rgba(0, 0, 0, 0.175);
+  outline: none;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .Modal-dialog {
+    margin: 80px auto;
+  }
+  .Modal-dialog--small {
+    width: 320px;
+  }
+  .Modal-dialog--medium {
+    width: 640px;
+  }
+  .Modal-dialog--large {
+    width: 960px;
+  }
+}
+.Modal__header,
+.Modal__body,
+.Modal__footer {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  position: relative;
+}
+.Modal__header {
+  display: flex;
+  align-items: center;
+  padding-left: 5rem;
+  background-color: #eee;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05);
+  z-index: 1;
+}
+.Modal__header__text {
+  padding-left: 1.6rem;
+  color: inherit;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+  margin: 0;
+  > h5,
+  > h2 {
+    margin: 0;
+    margin-bottom: 0.8rem;
+  }
+}
+.Modal__header__close {
+  transition: opacity 140ms;
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1ex;
+  margin: 0;
+  opacity: .4;
+  font-size: 24px;
+  padding: 20px 20px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+.Modal__header__close::after {
+  content: "\00d7";
+}
+.Modal__header__close:hover,
+.Modal__header__close:focus {
+  opacity: 1;
+  outline: 0;
+}
+.Modal__header__close:active {
+  color: #d64242;
+}
+.Modal__body {
+  margin: 0;
+  padding: 2rem 5rem;
+}
+.Modal__footer {
+  box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.05);
+  z-index: 1;
+}
+.Modal-backdrop {
+  animation-duration: 140ms;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 109;
+}
+.Modal-background-enter {
+  animation-name: modalBackdropEnter;
+}
+.Modal-background-leave {
+  animation-duration: 240ms;
+  animation-name: modalBackdropLeave;
+}
