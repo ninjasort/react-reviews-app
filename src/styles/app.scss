@@ -1,50 +1,78 @@
 $bg-color: #233040;
 $color-primary: #1E60A0;
+$screen-sm: 480px;
+$screen-md: 768px;
+$screen-lg: 996px;
 
 @import "modal";
 @import "form";
 @import "button";
+@import "review-item";
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
-  padding: 5.6rem;
+  padding: 2.4rem;
   font-family: 'Helvetica';
   background-color: $bg-color;
+  @media (min-width: $screen-sm) {
+    padding: 5.6rem;
+  }
+}
+
+ul,
+li {
+  list-style: none;
 }
 
 .review {
   width: 100%;
-  height: 100vh;
 }
 
 .review-panel {
-  position: absolute;
-  width: 960px;
-  top: 100px;
-  left: 50%;
+  max-width: 960px;
   margin: 0 auto;
-  margin-left: -480px;
   border-radius: 4px;
   background: #fff;
 }
 
 .review-product {
   display: flex;
+  flex-direction: column;
+  @media (min-width: $screen-md) {
+    flex-direction: row;
+  }
 }
 
 .reviews {
   margin: 0 auto;
-  padding: 1.6rem 6rem;
+  padding: 1.6rem;
+  @media (min-width: $screen-md) {
+    padding: 1.6rem 6rem;
+  } 
 }
 
 .reviews__title {
-  display: inline-block;
+  display: block;
+  text-align: center;
+  @media (min-width: $screen-md) {
+    display: inline-block;
+    text-align: left;
+  }
 }
 
 .reviews__btn {
-  display: inline-block;
-  float: right;
+  display: block;
+  margin: 0 auto;
+  float: none;
   padding-top: 1.6rem;
+  @media (min-width: $screen-md) {
+    display: inline-block;
+    float: right;
+  }
 }
 
 .reviews-list {
@@ -55,58 +83,55 @@ body {
   }
 }
 
-.review-item {
-  padding: 0 0 2.4rem;
-  margin: 0 0 1.6rem 0;
-  list-style: none;
-  border-bottom: 1px solid #eee;
-}
-
-.review-item__heading {
-  display: inline-block;
-  margin: 0 0.6rem 0.6rem 0;
-  vertical-align: middle;
-}
-
-.review-item__image {
-  float: left;
-  padding: 0 1rem 0 0;
-}
-
 .review-product__image {
-  padding: 5rem 3.6rem 0;
+  padding: 2.4rem;
   background-color: #ccc;
-  flex: 1;
+  flex: none;
   text-align: center;
   > img {
     box-shadow: 0px 1px 10px #999;
   }
-}
-
-.review-item__content {
-  column-count: 2;
+  @media (min-width: $screen-md) {
+    padding: 5rem 3.6rem 0;
+    flex: 1;
+  }
 }
 
 .review-product__details {
   position: relative;
-  padding: 3.6rem;
+  padding: 2.4rem;
   background-color: #eee;
-  flex: 2;
+  flex: none;
+  @media (min-width: $screen-md) {
+    padding: 3.6rem;
+    flex: 1;
+  }
+  @media (min-width: $screen-lg) {
+    flex: 2;
+  }
 }
 
 .review-product__btn {
-  position: absolute;
-  top: 15%;
-  right: 10%;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  @media (min-width: $screen-lg) {
+    position: absolute;
+    top: 15%;
+    right: 10%;
+  }
 }
 
 .rsr-container {
   display: inline-block;
   margin-bottom: 0.8rem;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .btn {
-  display: inline-block;
+  display: block;
   padding: 0.8rem 1.6rem;
   font-size: 0.9rem;
   border-radius: 40px;
@@ -115,6 +140,9 @@ body {
   text-decoration: none;
   &:hover {
     cursor: pointer;
+  }
+  @media (min-width: $screen-md) {
+    display: inline-block;
   }
 }
 

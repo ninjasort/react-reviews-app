@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import StarRating from 'react-star-rating';
+import ReviewItem from './ReviewItem';
 
 export default class Reviews extends React.Component {
 
@@ -20,11 +21,8 @@ export default class Reviews extends React.Component {
     if (this.props.reviews.length) {
       return this.props.reviews.map((review, i) => {
         return (
-            <li key={`review-${i}`} className="review-item">
-              <img src={review.avatar} className="review-item__image" />
-              <h3 className="review-item__heading">{review.name}</h3>
-              <StarRating name="react-star-rating" totalStars={5} rating={3} size={20} />
-              <div className="review-item__content">{review.comments}</div>
+            <li key={`review-${i}`}>
+              <ReviewItem review={review} />
             </li>
           );
       });

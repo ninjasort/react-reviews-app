@@ -1,0 +1,26 @@
+.review-item {
+  padding: 0 0 2.4rem;
+  margin: 0 0 1.6rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.review-item__heading {
+  display: inline-block;
+  margin: 0 0.6rem 0.6rem 0;
+  vertical-align: middle;
+}
+
+.review-item__image {
+  max-width: 40px;
+  margin: 0 20px 0 0;
+  float: left;
+  border-radius: 100px;
+}
+
+.review-item__content {
+  margin-left: 60px;
+  column-count: 1;
+  @media (min-width: $screen-md) {
+    column-count: 2;
+  }
+}
