@@ -125,8 +125,10 @@ li {
 .rsr-container {
   display: inline-block;
   margin-bottom: 0.8rem;
-  &:hover {
-    cursor: pointer;
+  .rsr-root:not(.rsr--disabled) {
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 

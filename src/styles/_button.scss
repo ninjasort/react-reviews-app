@@ -708,3 +708,15 @@ fieldset[disabled] .Button--link-delete {
   margin-left: 0;
   margin-right: 0;
 }
+.Button--lg {
+  font-size: 1.25rem;
+}
+.Button--sm {
+  font-size: 0.9rem;
+}
+.Button--xs {
+  font-size: 0.8rem;
+  line-height: 1.9;
+  padding-left: .66em;
+  padding-right: .66em;
+}

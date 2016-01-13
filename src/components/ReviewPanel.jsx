@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReviewsList from './ReviewsList';
+import ReviewList from './ReviewList';
 import ReviewModal from './ReviewModal';
-import StarRating from 'react-star-rating';
 import {
   Button, 
   Modal, 
@@ -42,9 +41,18 @@ export default class ReviewPanel extends React.Component {
   }
 
   handleSubmitReview(fields) {
+    for(const field in fields) {
+      if (!fields[field]) {
+        this.setState({
+          error: 'Please fill in all fields.'
+        });
+        return false;
+      }
+    }
     this.toggleModal();
     let reviewItems = this.state.reviewItems.concat(fields);
     this.setState({
+      error: '',
       reviewItems
     });
   }
@@ -66,10 +74,13 @@ export default class ReviewPanel extends React.Component {
             <a href={product.link} className="review-product__btn btn btn-primary">{callToAction}</a>
           </div>
         </div>
-        <ReviewsList reviews={this.state.reviewItems} onOpenModal={this.toggleModal.bind(this)} />
+        <ReviewList 
+          reviews={this.state.reviewItems} 
+          onOpenModal={this.toggleModal.bind(this)} />
         <ReviewModal 
           product={product}
           modalIsOpen={this.state.modalIsOpen} 
+          error={this.state.error} 
           onToggleModal={this.toggleModal.bind(this)}
           onSubmitReview={this.handleSubmitReview.bind(this)} />
       </div>

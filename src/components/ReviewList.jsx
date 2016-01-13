@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import StarRating from 'react-star-rating';
 import ReviewItem from './ReviewItem';
 
-export default class Reviews extends React.Component {
+export default class ReviewList extends React.Component {
 
   static propTypes = {
     onOpenModal: React.PropTypes.func,

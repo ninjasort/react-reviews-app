@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReviewsList from './ReviewsList';
 import StarRating from 'react-star-rating';
 import {
   Button, 
@@ -75,7 +74,12 @@ export default class ReviewModal extends React.Component {
   }
 
   render() {
-    let { modalIsOpen, product } = this.props;
+    let { 
+      modalIsOpen, 
+      product,
+      error
+    } = this.props;
+    
     return (
       <Modal 
         backdropClosesModal
@@ -130,8 +134,11 @@ export default class ReviewModal extends React.Component {
               </FileUpload>
             </FormField>
             <FormField className="text-center">
-              <button type="submit" className="btn btn-primary">Submit</button>
+              <Button submit>
+                Submit
+              </Button>
             </FormField>
+            <span style={{color: 'red'}}>{error}</span>
           </Form>
         </ModalBody>
       </Modal>

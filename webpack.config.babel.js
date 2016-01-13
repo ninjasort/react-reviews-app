@@ -2,7 +2,7 @@ import webpack from 'webpack';
 import autoprefixer from 'autoprefixer';
 
 export default {
-  entry: './src/app.jsx',
+  entry: './src/App.jsx',
   output: {
     path: 'dist',
     publicPath: '/assets/',
