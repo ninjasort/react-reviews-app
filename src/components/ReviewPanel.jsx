@@ -15,6 +15,7 @@ import {
 } from 'elemental';
 
 export default class ReviewPanel extends React.Component {
+  
   constructor(props) {
     super(props);
     this.state = {
@@ -86,4 +87,5 @@ export default class ReviewPanel extends React.Component {
       </div>
     );
   }
+  
 }

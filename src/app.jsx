@@ -4,6 +4,7 @@ import styles from './styles/app';
 import ReviewPanel from './components/ReviewPanel';
 
 class ReviewApp extends React.Component {
+  
   constructor(props) {
     super(props);
   }
@@ -15,6 +16,7 @@ class ReviewApp extends React.Component {
       </div>
     );
   }
+  
 }
 
 ReactDOM.render(<ReviewApp />, document.getElementById('app'));

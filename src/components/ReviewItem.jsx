@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import StarRating from 'react-star-rating';
 
 export default class ReviewItem extends React.Component {
-
+  
   constructor(props) {
     super(props);
   }
@@ -26,4 +26,5 @@ export default class ReviewItem extends React.Component {
       </div>
     );
   }
+  
 }
