@@ -1,7 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import ReviewList from './ReviewList';
-import ReviewModal from './ReviewModal';
+import React, { Component } from 'react'
+import ReviewList from './ReviewList'
+import ReviewModal from './ReviewModal'
 import {
   Button, 
   Modal, 
@@ -12,12 +11,12 @@ import {
   FormField,
   FormInput,
   FileUpload
-} from 'elemental';
+} from 'elemental'
 
-export default class ReviewPanel extends React.Component {
+export default class ReviewPanel extends Component {
   
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       product: {
         title: 'React.js Essentials',
@@ -32,7 +31,7 @@ export default class ReviewPanel extends React.Component {
         { name: 'Andrew', avatar: 'assets/img/avatar-2.jpg', rating: 4, comments: 'Portland ugh fashion axe Helvetica, YOLO Echo Park Austin gastropub roof party. Meggings cred before they sold out messenger bag, ugh fashion axe Pitchfork tousled freegan asymmetrical literally twee Thundercats. Whatever Blue Bottle Neutra irony 8-bit. Kogi ethnic ugh fashion axe bicycle rights.'}
       ],
       modalIsOpen: false
-    };
+    }
   }
 
   toggleModal() {
@@ -46,20 +45,20 @@ export default class ReviewPanel extends React.Component {
       if (!fields[field]) {
         this.setState({
           error: 'Please fill in all fields.'
-        });
-        return false;
+        })
+        return false
       }
     }
-    this.toggleModal();
-    let reviewItems = this.state.reviewItems.concat(fields);
+    this.toggleModal()
+    let reviewItems = this.state.reviewItems.concat(fields)
     this.setState({
       error: '',
       reviewItems
-    });
+    })
   }
 
   render() {
-    let { product, callToAction } = this.state;
+    let { product, callToAction } = this.state
     return (
       <div className="review-panel">
         <div className="review-product">
@@ -85,7 +84,7 @@ export default class ReviewPanel extends React.Component {
           onToggleModal={this.toggleModal.bind(this)}
           onSubmitReview={this.handleSubmitReview.bind(this)} />
       </div>
-    );
+    )
   }
   
 }

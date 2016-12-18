@@ -1,6 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import StarRating from 'react-star-rating';
+import React, { Component } from 'react'
+import StarRating from 'react-star-rating'
 import {
   Button, 
   Modal, 
@@ -11,9 +10,9 @@ import {
   FormField,
   FormInput,
   FileUpload
-} from 'elemental';
+} from 'elemental'
 
-export default class ReviewModal extends React.Component {
+export default class ReviewModal extends Component {
 
   static defaultProps = {
     formFields: {
@@ -22,13 +21,13 @@ export default class ReviewModal extends React.Component {
       comments: '',
       avatar: ''
     }
-  };
+  }
 
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       formFields: props.formFields
-    };
+    }
   }
   
   resetForm() {
@@ -39,38 +38,38 @@ export default class ReviewModal extends React.Component {
         comments: '',
         avatar: ''
       }
-    });
+    })
   }
 
   handleReviewSubmission(fields, e) {
-    e.preventDefault();
+    e.preventDefault()
     // submit the form
-    this.props.onSubmitReview(this.state.formFields);
+    this.props.onSubmitReview(this.state.formFields)
     // clean up the state
-    this.resetForm();
+    this.resetForm()
   }
 
   updateAvatarPreview(e, data) {
     let formFields = Object.assign({}, this.state.formFields, {
       avatar: data.dataURI
-    });
+    })
     this.setState({
       formFields
-    });
+    })
   }
   
   handleChange(key, e) {
     let formFields = Object.assign({}, this.state.formFields, {
       [key]: e.target.value
-    });
-    this.setState({formFields});
+    })
+    this.setState({formFields})
   }
 
   handleRatingChange(e, data) {
     let formFields = Object.assign({}, this.state.formFields, {
       rating: data.rating
-    });
-    this.setState({formFields});
+    })
+    this.setState({formFields})
   }
 
   render() {
@@ -78,20 +77,20 @@ export default class ReviewModal extends React.Component {
       modalIsOpen, 
       product,
       error
-    } = this.props;
+    } = this.props
     
     return (
       <Modal 
         backdropClosesModal
         isOpen={modalIsOpen} 
         onCancel={e => {
-          this.resetForm.call(this);
+          this.resetForm.call(this)
           this.props.onToggleModal.call(this)
         }}>
         <ModalHeader 
           showCloseButton 
           onClose={e => {
-            this.resetForm.call(this);
+            this.resetForm.call(this)
             this.props.onToggleModal.call(this)
           }}>
           <img src={product.image} width="75" />
@@ -142,7 +141,7 @@ export default class ReviewModal extends React.Component {
           </Form>
         </ModalBody>
       </Modal>
-    );
+    )
   }
   
 }

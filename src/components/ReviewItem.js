@@ -1,8 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import StarRating from 'react-star-rating';
+import React, { Component } from 'react'
+import StarRating from 'react-star-rating'
 
-export default class ReviewItem extends React.Component {
+export default class ReviewItem extends Component {
   
   constructor(props) {
     super(props);

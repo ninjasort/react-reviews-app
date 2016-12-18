@@ -1,8 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import ReviewItem from './ReviewItem';
+import React, { Component } from 'react'
+import ReviewItem from './ReviewItem'
 
-export default class ReviewList extends React.Component {
+export default class ReviewList extends Component {
 
   static propTypes = {
     onOpenModal: React.PropTypes.func,
@@ -10,10 +9,10 @@ export default class ReviewList extends React.Component {
   }
 
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       title: 'Reviews'
-    };
+    }
   }
 
   renderReviews() {
@@ -23,8 +22,8 @@ export default class ReviewList extends React.Component {
             <li key={`review-${i}`}>
               <ReviewItem review={review} />
             </li>
-          );
-      });
+          )
+      })
     }
   }
 
@@ -39,7 +38,7 @@ export default class ReviewList extends React.Component {
           </ul>
         </div>
       </div>
-    );
+    )
   }
   
 }
