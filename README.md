@@ -1,7 +1,7 @@
-# Creating a Reviews App with React
+# Reviews
 
-Learn how to create a reviews app with React
+> A review app in React.
 
-[Read the Post](http://velocitycoding.com/2015/11/06/creating-a-blog-with-es6-and-metalsmith)
-
-[View the Demo](http://velocitycoding.github.io/react-reviews-app)
+- Comments
+- Star Ratings
+- Avatar Images

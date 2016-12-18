@@ -4,11 +4,11 @@ import StarRating from 'react-star-rating'
 export default class ReviewItem extends Component {
   
   constructor(props) {
-    super(props);
+    super(props)
   }
 
   render() {
-    let { review } = this.props;
+    let { review } = this.props
     return (
       <div className="review-item">
         <img className="review-item__image" src={review.avatar} />
@@ -23,7 +23,7 @@ export default class ReviewItem extends Component {
         </span>
         <div className="review-item__content">{review.comments}</div>
       </div>
-    );
+    )
   }
   
 }
