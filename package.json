@@ -1,7 +1,7 @@
 {
   "name": "react-review-modal",
   "version": "1.0.0",
-  "description": "Creating a Review Modal with React.",
+  "description": "A review app in React.",
   "main": "index.js",
   "babel": {
     "presets": [
