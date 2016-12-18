@@ -17,6 +17,7 @@
   },
   "gh-pages-deploy": {
     "staticpath": "dist",
+    "cname": "reactreviews.sh",
     "prep": [
       "build"
     ],
