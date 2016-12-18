@@ -12,7 +12,15 @@
   },
   "scripts": {
     "start": "lightpack-server",
-    "build": "lightpack"
+    "build": "lightpack",
+    "deploy": "gh-pages-deploy"
+  },
+  "gh-pages-deploy": {
+    "staticpath": "dist",
+    "prep": [
+      "build"
+    ],
+    "noprompt": false
   },
   "author": "Cameron Roe <cameronjroe@gmail.com> (http://cameronjroe.com/)",
   "license": "MIT",
@@ -21,6 +29,7 @@
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
     "copy-webpack-plugin": "^4.0.1",
+    "gh-pages-deploy": "^0.4.2",
     "lightpack": "^1.2.1",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0"
